@@ -14,7 +14,12 @@ llm = ChatGroq(
     model="llama-3.3-70b-versatile",
     api_key=api_key
 )
-
+st.sidebar.divider()
+st.sidebar.title("Built by")
+st.sidebar.write("Muhammad Awais")
+st.sidebar.markdown("[GitHub](https://github.com/Muhammad-Awaix)")
+st.sidebar.markdown("[LinkedIn](https://linkedin.com/in/muhamad-awaix)")
+st.sidebar.markdown("[Email](mailto:mawais.ai021@gmail.com)")
 st.sidebar.title("How to use")
 st.sidebar.write("1. Upload your CV in PDF format")
 st.sidebar.write("2. Paste the job description")
