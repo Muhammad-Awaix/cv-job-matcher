@@ -1,4 +1,5 @@
 import streamlit as st
+from prompts import get_analysis_prompt
 from langchain_community.document_loaders import PyPDFLoader
 from dotenv import load_dotenv
 from langchain_core.messages import HumanMessage
@@ -31,18 +32,7 @@ if st.button("Analyze"):
                 api_key=os.getenv("GROQ_API_KEY")
             )
 
-            prompt = f"""
-            You are a career advisor. Given the CV and job description below, do three things:
-            1. Score the CV against the job description out of 10.
-            2. Highlight the most relevant skills and experiences from the CV.
-            3. Provide suggestions for improving the CV to better match the job description.
-
-            CV:
-            {cv_text}
-
-            Job Description:
-            {job_description}
-            """
+            prompt = get_analysis_prompt(cv_text, job_description)
 
             response = llm.invoke([HumanMessage(content=prompt)])
             st.markdown(response.content)
