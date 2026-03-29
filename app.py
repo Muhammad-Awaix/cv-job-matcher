@@ -8,6 +8,13 @@ import os
 
 load_dotenv()
 
+
+st.sidebar.title("How to use")
+st.sidebar.write("1. Upload your CV in PDF format")
+st.sidebar.write("2. Paste the job description")
+st.sidebar.write("3. Click Analyze")
+st.sidebar.write("4. Get your score and cover letter")
+
 st.title("CV Analyzer with Groq LLM")
 st.subheader("Paste a job description and get your CV scored instantly")
 
